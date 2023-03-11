@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { IQuestion } from "src/questions/interfaces/questions.interface";
 
 @Schema({timestamps:true})
 export class Quiz {
@@ -10,7 +11,7 @@ export class Quiz {
     description:String;
 
     @Prop({required:true})
-    questions:String[];
+    questions:IQuestion[];
 
     @Prop({required:true})
     numQuestions:number;

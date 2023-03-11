@@ -19,10 +19,9 @@ export class QuizController {
 
     @Get("/:id")
     getOneQuiz(@Param('id') id: string){
-        
-            return this.quizService.findOneQuiz(id)
-        
+        return this.quizService.findOneQuiz(id)
     }
+    
 
     @Put(':id')
     async update(@Param('id') id: string, @Body() quizDto: QuizDto) {

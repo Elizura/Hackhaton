@@ -8,6 +8,7 @@ import { QuizesService } from './services/quizes/quizes.service';
 @Module({
   imports: [MongooseModule.forFeature([{ name: 'Quiz', schema: QuizSchema }])],
   controllers: [QuizController],
-  providers: [QuizesService]
+  providers: [QuizesService],
+  exports: [QuizesModule]
 })
 export class QuizesModule {}

@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { QuizesModule } from './quizes/quizes.module';
+import { QuestionsModule } from './questions/questions.module';
 
 @Module({
   imports: [QuizesModule, MongooseModule.forRoot(
@@ -10,7 +11,7 @@ import { QuizesModule } from './quizes/quizes.module';
     {
       dbName: 'daniel',
     },
-  ),],
+  ), QuestionsModule,],
   controllers: [AppController],
   providers: [AppService],
 })
