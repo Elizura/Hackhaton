@@ -18,6 +18,11 @@ export class UsersController {
   async getAll() {
     return await this.usersService.getAll();
   }
+
+  @Get('/ranking')
+  async getRanking() {
+    return await this.usersService.getAllRank();
+  }
   @Get('/:id')
   async getById(@Param('id') id: string) {
     return await this.usersService.getUser(id);

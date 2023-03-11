@@ -1,4 +1,6 @@
-export interface IUser {
+import { Document } from 'mongoose';
+
+export interface IUser extends Document {
   telegramId: string;
   username: string;
   firstName: string;
@@ -8,4 +10,5 @@ export interface IUser {
   rank: number;
   totalQuestions: [string];
   correctQuestions: number;
+  role: string;
 }
