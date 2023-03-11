@@ -19,11 +19,14 @@ export class User {
   @Prop({ required: true, default: 0 })
   correctQuestions: number;
 
-  // @Prop({ required: true })
-  // rank: number;
+  @Prop()
+  rank: number;
 
   @Prop({ required: true, default: [] })
   totalQuestions: [string];
+
+  @Prop({ required: true, enum: ['admin', 'user'], default: 'user' })
+  role: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
